@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<meta charset="ISO-8859-1">
+<title>Perfil</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" th:href="@{/css/style2.css}">
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="#" th:href="@{/}">Odebrecht</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+          <li class="nav-item">
+              <a class="nav-link" sec:authorize="isAuthenticated()" th:href="@{/}">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" sec:authorize="isAuthenticated()" th:href="@{/}">Cuestionario</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" sec:authorize="isAuthenticated()" th:href="@{/professionals}">Psicologos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" sec:authorize="isAuthenticated()" th:href="@{/}">Citas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" sec:authorize="isAuthenticated()" th:href="@{/}">Perfil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" sec:authorize="isAuthenticated()" th:href="@{/logout}">Cerrar sesión</a>
+            </li>
+          </ul>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <section>
+            <h1 align="center">Perfil</h1>
+            <div class="row">
+                <div class="col-xl-4 col-sm-12 col-md-6 col-lg-4">
+                    <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title" th:text="${professional.firstName}">
+                        </h5>
+                        <p class="card-text" th:text="${professional.lastName}">
+                        </p>
+                    </div>
+                </div>
+                </div>
+                <div class="col-xl-7 col-md-6 col-lg-7 col-sm-12">
+                    <h3 class="perfil">
+                        Carrera
+                    </h3>
+                    <p class="perfil-texto" th:text="${professional.licensed}">
+                    </p>
+                    <br>
+                    <h3 class="perfil">
+                        Puesto
+                    </h3>
+                    <p class="perfil-texto" th:text="${professional.type}">
+                    </p>
+                    <br>
+                    <h3 class="perfil">
+                        Descripción de perfil
+                    </h3>
+                    <p class="perfil-texto" th:text="${professional.description}">
+                    </p>
+                    <br>
+                </div>
+                <div class="col-xl-1 col-md-12 col-sm-12 col-lg-1">
+                    <h3 class="perfil">
+                        Local
+                    </h3>
+                    <p class="perfil-texto" th:text="${professional.address}">
+                    </p>
+                    <br>
+                    <h3 class="perfil">
+                        Email
+                    </h3>
+                    <p class="perfil-texto" th:text="${professional.email}">
+                    </p>
+                    <br>
+                    <h3 class="perfil">
+                        Número local
+                    </h3>
+                    <p class="perfil-texto" th:text="${professional.number}">
+                    </p>
+                    <br>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <br><br>
+
+    <footer class="bg-light text-center text-lg-start">
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2020 Copyright:
+            <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+	
+	
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
