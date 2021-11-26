@@ -8,7 +8,6 @@
 <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
-
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <a class="navbar-brand" href="#" th:href="@{/}">Odebrecht</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,57 +38,25 @@
     </nav>
 
     <div class="container">
-        <section>
-            <div class="psicologos">
-                <h2 align="center">Psicologos</h2>
-                <p align="justify">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id, recusandae amet saepe dolor 
-                    facere quam quasi inventore repudiandae! Recusandae animi reprehenderit error modi enim 
-                    velit facere sit perferendis ratione natus! Lorem ipsum dolor sit amet consectetur adipisicing 
-                    elit. Iusto dolorem fugiat inventore. Nemo ex vel error autem aliquid perferendis enim! Eveniet 
-                    dolorem minima excepturi necessitatibus quibusdam, nostrum voluptates ipsa labore.
-                </p>
-                <br>
-
-                <div class="row">
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6" th:each="psicologos : ${psicologo}">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title" th:text="${psicologos.firstName}"></h5>
-                                <p class="card-text" th:text="${psicologos.description}"></p>
-                                <a href="#" class="btn btn-primary" th:href="@{/professionals/} +${psicologos.id}" sec:authorize="isAuthenticated()">Ver perfil</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <br>
-                <h2 align="center">Psiquiatras</h2>
-                <p align="justify">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id, recusandae amet saepe dolor 
-                    facere quam quasi inventore repudiandae! Recusandae animi reprehenderit error modi enim 
-                    velit facere sit perferendis ratione natus! Lorem ipsum dolor sit amet consectetur adipisicing 
-                    elit. Iusto dolorem fugiat inventore. Nemo ex vel error autem aliquid perferendis enim! Eveniet 
-                    dolorem minima excepturi necessitatibus quibusdam, nostrum voluptates ipsa labore.
-                </p>
-
-                <br>
-
-                <div class="row">
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6" th:each="psiquiatras : ${psiquiatra}">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title" th:text="${psiquiatras.firstName}"></h5>
-                                <p class="card-text" th:text="${psiquiatras.description}"></p>
-                                <a href="#" class="btn btn-primary" th:href="@{/professionals/} +${psiquiatras.id}" sec:authorize="isAuthenticated()">Ver perfil</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
-
-        </section>
+        <div class="p-4">
+        <h2>Resultado de la consulta</h2>
+	    </div>
+	    <div class="p-4">
+	    	<form th:action="@{/guardarconsulta}" th:object="${consulta}" method="POST">
+	    		<input type="hidden" name="usuario" class="form-control" th:field="*{usuario_id}" readonly>
+	    		<div class="form-group">
+	    			<b><label for="resultado">Resultado</label></b>
+	    			<p th:text="${respuesta}"></p>
+	    			<input type="hidden" name="resultado" class="form-control" th:field="*{resultado}" readonly>
+	    		</div>
+	    		<div class="form-group">
+	    			<b><label for="resultado">Medico recomendado</label></b>
+	    			<p th:text="'Dr(a). '+${profesional.firstName}+' '+${profesional.lastName}"></p>
+	    			<input type="hidden" name="medico" class="form-control" th:field="*{medico_id}" readonly>
+	    		</div>
+	    		<input type="submit" value="Guardar consulta" class="btn btn-primary">
+	    	</form>
+	    </div>
     </div>
 
     <br><br>

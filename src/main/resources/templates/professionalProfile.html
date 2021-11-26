@@ -19,7 +19,7 @@
               <a class="nav-link" sec:authorize="isAuthenticated()" th:href="@{/}">Inicio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" sec:authorize="isAuthenticated()" th:href="@{/}">Cuestionario</a>
+              <a class="nav-link" sec:authorize="isAuthenticated()" th:href="@{/cuestionario}">Cuestionario</a>
             </li>
             <li class="nav-item active">
               <a class="nav-link" sec:authorize="isAuthenticated()" th:href="@{/professionals}">Psicologos</a>
@@ -28,10 +28,10 @@
               <a class="nav-link" sec:authorize="isAuthenticated()" th:href="@{/}">Citas</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" sec:authorize="isAuthenticated()" th:href="@{/}">Perfil</a>
+              <a class="nav-link" sec:authorize="isAuthenticated()" th:href="@{/perfil}">Perfil</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" sec:authorize="isAuthenticated()" th:href="@{/logout}">Cerrar sesión</a>
+              <a class="nav-link" sec:authorize="isAuthenticated()" th:href="@{/logout}">Cerrar sesiï¿½n</a>
             </li>
           </ul>
         </div>
@@ -43,7 +43,7 @@
             <div class="row">
                 <div class="col-xl-4 col-sm-12 col-md-6 col-lg-4">
                     <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="" alt="Card image cap">
+                    <img class="card-img-top" th:src="${professional.image}" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title" th:text="${professional.firstName}">
                         </h5>
@@ -56,7 +56,7 @@
                     <h3 class="perfil">
                         Carrera
                     </h3>
-                    <p class="perfil-texto" th:text="${professional.licensed}">
+                    <p class="perfil-texto" th:text="${professional.image}">
                     </p>
                     <br>
                     <h3 class="perfil">
@@ -66,7 +66,7 @@
                     </p>
                     <br>
                     <h3 class="perfil">
-                        Descripción de perfil
+                        Descripciï¿½n de perfil
                     </h3>
                     <p class="perfil-texto" th:text="${professional.description}">
                     </p>
@@ -86,7 +86,7 @@
                     </p>
                     <br>
                     <h3 class="perfil">
-                        Número local
+                        Nï¿½mero local
                     </h3>
                     <p class="perfil-texto" th:text="${professional.number}">
                     </p>
@@ -101,7 +101,7 @@
     <footer class="bg-light text-center text-lg-start">
         <!-- Copyright -->
         <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-            © 2020 Copyright:
+            ï¿½ 2020 Copyright:
             <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
         </div>
         <!-- Copyright -->

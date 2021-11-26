@@ -9,7 +9,7 @@
 </head>
 <body>
 	<!-- IMPORTANTE -->
-	<!-- DEBES UTILIZAR sec:authorize="isAuthenticated()" para poder reenviar a otra página -->
+	<!-- DEBES UTILIZAR sec:authorize="isAuthenticated()" para poder reenviar a otra pï¿½gina -->
 	<!-- coloca los estilos css en la carpeta static y utiliza th:href="@{/css/nombre de archivo y tipo}" para invocarlo -->
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <a class="navbar-brand" href="#" sec:authorize="isAuthenticated()" th:href="@{/}">Odebrecht</a>
@@ -22,19 +22,19 @@
               <a class="nav-link" href="#" sec:authorize="isAuthenticated()" th:href="@{/}">Inicio</a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="#" sec:authorize="isAuthenticated()" th:href="@{/}">Cuestionario</a>
+              <a class="nav-link" href="#" sec:authorize="isAuthenticated()" th:href="@{/cuestionario}">Cuestionario</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#" sec:authorize="isAuthenticated()" th:href="@{/professionals}">Psicologos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" sec:authorize="isAuthenticated()" th:href="@{/}">Citas</a>
+              <a class="nav-link" href="#" sec:authorize="isAuthenticated()" th:href="@{/consultas}">Consultas</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" sec:authorize="isAuthenticated()" th:href="@{/}">Perfil</a>
+              <a class="nav-link" href="#" sec:authorize="isAuthenticated()" th:href="@{/perfil}">Perfil</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" sec:authorize="isAuthenticated()" th:href="@{/logout}">Cerrar sesión</a>
+              <a class="nav-link" href="#" sec:authorize="isAuthenticated()" th:href="@{/logout}">Cerrar sesiÃ³n</a>
             </li>
           </ul>
         </div>
@@ -52,8 +52,8 @@
             <div class="about-us">
                 <div class="row">
                     <div class="col-xl-12">
-                        <h2 id="about-h2" align="center">¿Quienes somos?</h2>
-                        <p align="justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi tenetur similique accusamus suscipit optio qui nam? 
+                        <h2 id="about-h2" align="center">Â¿Quienes somos?</h2>
+                        <p align="justify" th:text="${nombre}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi tenetur similique accusamus suscipit optio qui nam? 
                             Debitis odit dolorem adipisci eligendi sunt natus sit, non necessitatibus nihil neque! Officia, delectus? Lorem ipsum
                             dolor sit, amet consectetur adipisicing elit. Molestias, accusantium et in maiores adipisci suscipit dicta ipsam blanditiis 
                             rerum libero dolorum vitae? Sed tempore adipisci sapiente, minima rem molestias impedit.</p>
@@ -65,7 +65,7 @@
                 <div class="row">
 
                     <div class="col-xl-8">
-                        <h3 class="h3-about" align="center">Misión</h3>
+                        <h3 class="h3-about" align="center">MisiÃ³n</h3>
                         <p align="justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                            Quidem maiores tempore, quam neque velit autem necessitatibus 
                            nisi fugit iure, rem esse repellat impedit quo praesentium. 
@@ -88,7 +88,7 @@
                     </div>
 
                     <div class="col-xl-8">
-                        <h3 class="h3-about" align="center">Visión</h3>
+                        <h3 class="h3-about" align="center">VisiÃ³n</h3>
                         <p align="justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                            Quidem maiores tempore, quam neque velit autem necessitatibus 
                            nisi fugit iure, rem esse repellat impedit quo praesentium. 
@@ -127,7 +127,7 @@
     <footer class="bg-light text-center text-lg-start">
         <!-- Copyright -->
         <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-            © 2020 Copyright:
+            ï¿½ 2020 Copyright:
             <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
         </div>
         <!-- Copyright -->
