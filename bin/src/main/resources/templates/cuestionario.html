@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<meta charset="ISO-8859-1">
+<title>Inicio</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+	<!-- IMPORTANTE -->
+	<!-- DEBES UTILIZAR sec:authorize="isAuthenticated()" para poder reenviar a otra p�gina -->
+	<!-- coloca los estilos css en la carpeta static y utiliza th:href="@{/css/nombre de archivo y tipo}" para invocarlo -->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="#" sec:authorize="isAuthenticated()" th:href="@{/}">Odebrecht</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#" sec:authorize="isAuthenticated()" th:href="@{/}">Inicio</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#" sec:authorize="isAuthenticated()" th:href="@{/cuestionario}">Cuestionario</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" sec:authorize="isAuthenticated()" th:href="@{/professionals}">Psicologos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" sec:authorize="isAuthenticated()" th:href="@{/consultas}">Consultas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" sec:authorize="isAuthenticated()" th:href="@{/perfil}">Perfil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" sec:authorize="isAuthenticated()" th:href="@{/logout}">Cerrar sesión</a>
+            </li>
+          </ul>
+        </div>
+    </nav>
+
+    <header>
+        <h1 id="header-h1">Cuestionario</h1>
+    </header>
+
+    <div class="container">
+        <form th:action="@{/resultado}" method="post">
+        	<p><strong class="arial">PREGUNTA 1. <font face="Arial Unicode MS">Tengo muchas dificultades a la hora de tener que tomar decisiones</font></strong>
+            <br>
+            <span class="unicode9gris">
+	            <input name="q1" type="radio" value="2"> Siempre <br>
+	            <input name="q1" type="radio" value="1"> Con frecuencia <br>
+	            <input name="q1" type="radio" value="0" required> A veces <br>
+	            <input name="q1" type="radio" value="-1"> Rara vez <br>
+	            <input name="q1" type="radio" value="-2"> Nunca 
+            </span></p>                      
+            <p><span class="arial"><strong>PREGUNTA 2. <font face="Arial Unicode MS">Disfruto con las actividades sociales</font></strong></span><br>
+            <span class="unicode9gris">
+	            <input name="q2" type="radio" value="2"> Siempre <br>
+	            <input name="q2" type="radio" value="1"> Con frecuencia <br>
+	            <input name="q2" type="radio" value="0" required> A veces <br>
+	            <input name="q2" type="radio" value="-1"> Rara vez <br>
+	            <input name="q2" type="radio" value="-2"> Nunca 
+            </span></p>
+            <p><span class="arial"><strong>PREGUNTA 3. <font face="Arial Unicode MS">Experimento muchos cambios emocionales a lo largo del día</font></strong></span><strong><br></strong>
+            <span class="unicode9gris">
+            	<input name="q3" type="radio" value="2"> Siempre <br>
+	            <input name="q3" type="radio" value="1"> Con frecuencia <br>
+	            <input name="q3" type="radio" value="0" required> A veces <br>
+	            <input name="q3" type="radio" value="-1"> Rara vez <br>
+	            <input name="q3" type="radio" value="-2"> Nunca 
+            </span></p>
+            <p><span class="arial"><strong>PREGUNTA 4. <font face="Arial Unicode MS">No me avergüenzo cuando cometo un error</font></strong></span><strong><font face="Arial Unicode MS"><br></font></strong>
+            <span class="unicode9gris">
+            	<input name="q4" type="radio" value="2"> Siempre <br>
+	            <input name="q4" type="radio" value="1"> Con frecuencia <br>
+	            <input name="q4" type="radio" value="0" required> A veces <br>
+	            <input name="q4" type="radio" value="-1"> Rara vez <br>
+	            <input name="q4" type="radio" value="-2"> Nunca 
+            </span></p>
+            <p><span class="arial"><strong>PREGUNTA 5. <font face="Arial Unicode MS">No demuestro mis auténticos sentimientos ante los demás</font></strong></span><strong><font face="Arial Unicode MS"><br></font></strong>
+            <span class="unicode9gris">
+               	<input name="q5" type="radio" value="2"> Siempre <br>
+	            <input name="q5" type="radio" value="1"> Con frecuencia <br>
+	            <input name="q5" type="radio" value="0" required> A veces <br>
+	            <input name="q5" type="radio" value="-1"> Rara vez <br>
+	            <input name="q5" type="radio" value="-2"> Nunca 
+            </span></p>
+            <p><span class="arial"><strong>PREGUNTA  6. <font face="Arial Unicode MS">Suelo tomarme con humor mis fallos</font></strong></span><strong><font face="Arial Unicode MS"><br></font></strong>
+           	<span class="unicode9gris">
+            	<input name="q6" type="radio" value="2"> Siempre <br>
+	            <input name="q6" type="radio" value="1"> Con frecuencia <br>
+	            <input name="q6" type="radio" value="0" required> A veces <br>
+	            <input name="q6" type="radio" value="-1"> Rara vez <br>
+	            <input name="q6" type="radio" value="-2"> Nunca 
+            </span></p>
+            <p><span class="arial"><strong>PREGUNTA 7. <font face="Arial Unicode MS">Dudo de mis sentimientos</font></strong></span><strong><font face="Arial Unicode MS"><br></font></strong>
+            <span class="unicode9gris">
+               	<input name="q7" type="radio" value="2"> Siempre <br>
+	            <input name="q7" type="radio" value="1"> Con frecuencia <br>
+	            <input name="q7" type="radio" value="0" required> A veces <br>
+	            <input name="q7" type="radio" value="-1"> Rara vez <br>
+	            <input name="q7" type="radio" value="-2"> Nunca 
+            </span></p>
+            <p><span class="arial"><strong>PREGUNTA 8. <font face="Arial Unicode MS">Me doy cuenta con facilidad de lo que los demás esperan de mí</font></strong></span><strong><font face="Arial Unicode MS"><br></font></strong>
+            <span class="unicode9gris">
+            	<input name="q8" type="radio" value="2"> Siempre <br>
+	            <input name="q8" type="radio" value="1"> Con frecuencia <br>
+	            <input name="q8" type="radio" value="0" required> A veces <br>
+	            <input name="q8" type="radio" value="-1"> Rara vez <br>
+	            <input name="q8" type="radio" value="-2"> Nunca 
+            </span></p>
+            <p><span class="arial"><strong>PREGUNTA 9. <font face="Arial Unicode MS">Evito a las personas que me hacen sentir inferior, culpable o avergonzado.</font></strong></span><strong><font face="Arial Unicode MS"><br></font></strong>
+            <span class="unicode9gris">
+            	<input name="q9" type="radio" value="2"> Siempre <br>
+	            <input name="q9" type="radio" value="1"> Con frecuencia <br>
+	            <input name="q9" type="radio" value="0" required> A veces <br>
+	            <input name="q9" type="radio" value="-1"> Rara vez <br>
+	            <input name="q9" type="radio" value="-2"> Nunca 
+            </span></p>
+            <p><span class="arial"><strong>PREGUNTA 10. <font face="Arial Unicode MS">No me asusto normalmente</font></strong></span><strong><font face="Arial Unicode MS"><br></font></strong>
+            <span class="unicode9gris">
+            	<input name="q10" type="radio" value="2"> Siempre <br>
+	            <input name="q10" type="radio" value="1"> Con frecuencia <br>
+	            <input name="q10" type="radio" value="0" required> A veces <br>
+	            <input name="q10" type="radio" value="-1"> Rara vez <br>
+	            <input name="q10" type="radio" value="-2"> Nunca 
+            </span></p>
+            <p><span class="arial"><strong>PREGUNTA 11. <font face="Arial Unicode MS">Me amargo dándole muchas vueltas a la cabeza incluso con temas sin importancia.</font></strong></span><strong><font face="Arial Unicode MS"><br></font></strong>
+            <span class="unicode9gris">
+            	<input name="q11" type="radio" value="2"> Siempre <br>
+	            <input name="q11" type="radio" value="1"> Con frecuencia <br>
+	            <input name="q11" type="radio" value="0" required> A veces <br>
+	            <input name="q11" type="radio" value="-1"> Rara vez <br>
+	            <input name="q11" type="radio" value="-2"> Nunca 
+            </span></p>
+            <p><span class="arial"><strong>PREGUNTA 12. <font face="Arial Unicode MS">No tardo en recuperarme de los malos momentos</font></strong></span><strong><font face="Arial Unicode MS"><br></font></strong>
+            <span class="unicode9gris">
+            	<input name="q12" type="radio" value="2"> Siempre <br>
+	            <input name="q12" type="radio" value="1"> Con frecuencia <br>
+	            <input name="q12" type="radio" value="0" required> A veces <br>
+	            <input name="q12" type="radio" value="-1"> Rara vez <br>
+	            <input name="q12" type="radio" value="-2"> Nunca 
+            </span></p>
+            <p><span class="arial"><strong>PREGUNTA 13. <font face="Arial Unicode MS">No puedo dejar de sentirme inquieto ante la presencia de gente extraña.</font></strong></span><strong><font face="Arial Unicode MS"><br></font></strong>
+            <span class="unicode9gris">
+            	<input name="q13" type="radio" value="2"> Siempre <br>
+	            <input name="q13" type="radio" value="1"> Con frecuencia <br>
+	            <input name="q13" type="radio" value="0" required> A veces <br>
+	            <input name="q13" type="radio" value="-1"> Rara vez <br>
+	            <input name="q13" type="radio" value="-2"> Nunca 
+            </span></p>
+            <p><span class="arial"><strong>PREGUNTA 14. <font face="Arial Unicode MS">Soy alegre y divertido</font></strong></span><strong><font face="Arial Unicode MS"><br></font></strong>
+            <span class="unicode9gris">
+            	<input name="q14" type="radio" value="2"> Siempre <br>
+	            <input name="q14" type="radio" value="1"> Con frecuencia <br>
+	            <input name="q14" type="radio" value="0" required> A veces <br>
+	            <input name="q14" type="radio" value="-1"> Rara vez <br>
+	            <input name="q14" type="radio" value="-2"> Nunca 
+            </span></p>
+            <p><span class="arial"><strong>PREGUNTA 15. <font face="Arial Unicode MS">Busco excusas para escaparme de las situaciones que me provocan malestar</font></strong></span><strong><font face="Arial Unicode MS"><br></font></strong>
+            <span class="unicode9gris">
+            	<input name="q15" type="radio" value="2"> Siempre <br>
+	            <input name="q15" type="radio" value="1"> Con frecuencia <br>
+	            <input name="q15" type="radio" value="0" required> A veces <br>
+	            <input name="q15" type="radio" value="-1"> Rara vez <br>
+	            <input name="q15" type="radio" value="-2"> Nunca 
+            </span></p>
+            <blockquote>
+               	<p><span class="arialroja_10px">Por favor comprueba que has constestado TODAS las preguntas antes de pulsar el botón "Calcular" ya que son necesarias todas las contestaciones para obtener el resultado. Si te equivocas y pulsas "Calcular" sin haber contestado todas las preguntas no tienes que repetir la introducción de éstas simplemente retrocede pulsando PAGINA ATRAS en tu navegador y completa sólo las que te falten. </span></p>
+            </blockquote>
+            <p align="center"><font face="Arial Unicode MS">
+            	<input type="submit" name="clic" value="Calcular">
+             </font></p>
+    	</form>
+    </div>
+
+    <br><br>
+
+    <footer class="bg-light text-center text-lg-start">
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            � 2020 Copyright:
+            <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>

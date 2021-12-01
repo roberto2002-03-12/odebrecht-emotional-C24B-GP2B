@@ -1,0 +1,11 @@
+@charset "ISO-8859-1";
+
+footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.card {
+    height: 1000px;
+}

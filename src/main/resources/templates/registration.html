@@ -1,31 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="utf-8">
 <title>Registrarse</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
 	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
 	crossorigin="anonymous">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<link rel="stylesheet" th:href="@{/css/registro.css}">
 </head>
 <body>
-	<nav class="navbar navbar-inverse navbar-fixed-top">
-		<div class="container">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed"
-					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
-					aria-controls="navbar">
-					<span class="sr-only">Navegación</span> <span
-						class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="#" th:href="@{/}">Registrarse</a>
-			</div>
-		</div>
-	</nav>
 
-<br>
-<br>
 
 	<div class="container">
 		<div class="row">
@@ -33,10 +19,10 @@
 
 				<!-- success message -->
 				<div th:if="${param.success}">
-					<div class="alert alert-info">Te has registrado, ¡Bienvenido!</div>
+					<div class="alert alert-success">Te has registrado, Â¡Bienvenido!</div>
 				</div>
 
-				<h1>Registration</h1>
+				<h1>Formulario de Registro</h1>
 
 				<form th:action="@{/registration}" method="post" th:object="${user}">
 					<div class="form-group">
@@ -52,13 +38,13 @@
 					</div>
 					
 					<div class="form-group">
-						<label class="control-label" for="password"> Crear Contraseña </label> <input
+						<label class="control-label" for="password"> Crear ContraseÃ±a </label> <input
 							id="password" class="form-control" type="password"
 							th:field="*{password}" required autofocus="autofocus" />
 					</div>
 					
 					<div class="form-group">
-						<label class="control-label" for="cellphone"> Número de celular </label> <input
+						<label class="control-label" for="cellphone"> NÃºmero de celular </label> <input
 							id="cellphone" class="form-control" th:field="*{cellphone}" required
 							autofocus="autofocus" />
 					</div>
@@ -76,8 +62,8 @@
 					</div>
 
 					<div class="form-group">
-						<button type="submit" class="btn btn-success">Register</button>
-						<span>¿Ya estas registrado? <a href="/" th:href="@{/login}">Inicia sesión</a></span>
+						<button type="submit" class="btn btn-success">Registrarse</button>
+						<span>Â¿Ya estas registrado? <a href="/" th:href="@{/login}">Inicia sesiÃ³n</a></span>
 					</div>
 				</form>
 			</div>

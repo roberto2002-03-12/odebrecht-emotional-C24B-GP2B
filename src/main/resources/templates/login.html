@@ -1,34 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="utf-8">
 <title>Iniciar sesión</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
 	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-	crossorigin="anonymous">
+	crossorigin="anonymous"
+	>
+<link rel="stylesheet" th:href="@{/css/login.css}">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 </head>
 <body>
-	<nav class="navbar navbar-inverse navbar-fixed-top">
-		<div class="container">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed"
-					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
-					aria-controls="navbar">
-					<span class="sr-only">Navegación</span> <span
-						class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="#" th:href="@{/}">Iniciar sesión</a>
-			</div>
-		</div>
-	</nav>
+
 	
-	<br>
-	<br>
+	<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+	  <symbol id="exclamation-triangle-fill" fill="currentColor" viewBox="0 0 16 16">
+	    <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+	  </symbol>
+	</svg>
+	
 	<div class = "container">
-		<div class = "row">
-			<div class = "col-md-6 col-md-offset-3">
+		
+			<div class = "col-md-5 col-md-offset-3">
 				
 				<h1> Iniciar sesión </h1>
 				<form th:action="@{/login}" method="post">
@@ -57,17 +51,18 @@
 						<div class="row">
 							<div class="col-sm-6 col-sm-offset-3">
 								<input type="submit" name="login-submit" id="login-submit"
-									class="form-control btn btn-primary" value="Iniciar sesión" />
+									class="form-control btn btn-success" value="Iniciar sesión" />
 							</div>
 						</div>
 					</div>
 				</form>
-				<div class="form-group">
-						<span>¿Nuevo usuario? <a href="/" th:href="@{/registration}">Register
-								here</a></span>
+				<div class="form-group-db">
+						<span>¿Nuevo usuario? <a href="/" th:href="@{/registration}">Registrar usuario </a></span>
 				</div>
+				
 			</div>
-		</div>
+		</ul>
+	</div>
 	</div>
 </body>
 </html>
