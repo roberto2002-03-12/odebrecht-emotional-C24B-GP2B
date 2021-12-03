@@ -28,4 +28,8 @@ public class ProfessionalServiceImpl {
 		return professionalRepository.selectByMeeting(id);
 	}
 	
+	public Professional selectByType(String type) {
+		return professionalRepository.selectByType(type);
+	}
+	
 }

@@ -3,40 +3,14 @@
 	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
 	lang="es">
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="utf-8">
 <title>Inicio</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link rel="stylesheet" th:href="@{/css/style.css}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand" href="#" sec:authorize="isAuthenticated()" th:href="@{/}">Odebrecht</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" href="#" sec:authorize="isAuthenticated()" th:href="@{/}">Inicio</a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="#" sec:authorize="isAuthenticated()" th:href="@{/}">Cuestionario</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" sec:authorize="isAuthenticated()" th:href="@{/professionals}">Psicologos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" sec:authorize="isAuthenticated()" th:href="@{/citas}">Citas</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" sec:authorize="isAuthenticated()" th:href="@{/}">Perfil</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" sec:authorize="isAuthenticated()" th:href="@{/logout}">Cerrar sesi�n</a>
-            </li>
-          </ul>
-        </div>
-    </nav>
+	<nav th:replace="/layout/template"></nav>
 
     <header>
         <h1 id="header-h1">Odebrecht Emotional</h1>
@@ -50,11 +24,17 @@
             <div class="about-us">
                 <div class="row">
                     <div class="col-xl-12">
-                        <h2 id="about-h2">�Quienes somos?</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi tenetur similique accusamus suscipit optio qui nam? 
-                            Debitis odit dolorem adipisci eligendi sunt natus sit, non necessitatibus nihil neque! Officia, delectus? Lorem ipsum
-                            dolor sit, amet consectetur adipisicing elit. Molestias, accusantium et in maiores adipisci suscipit dicta ipsam blanditiis 
-                            rerum libero dolorum vitae? Sed tempore adipisci sapiente, minima rem molestias impedit.</p>
+                        <h2 id="about-h2" align="center">¿Quienes somos?</h2>
+                        <p align="justify">Somos una plataforma que reúne a los mejores psicólogos, psicoterapeutas, 
+                        				   psiquiatras y otros profesionales relacionados con la salud mental
+                        				   y el desarrollo humano. Nuestra prioridad es ayudar a las personas 
+                        				   interesadas por la psicología y el bienestar emocional para que encuentren 
+                        				   con rapidez y facilidad, el profesional y el tipo de terapia o tratamiento
+                        				   más adecuado de acuerdo con la situación vital y emocional por la que atraviesan. 
+                        				   Somos especialistas en el campo de la psicología y centramos nuestros esfuerzos 
+                        				   en que las personas que visiten nuestra página sientan que están en un entorno 
+                        				   seguro y de confianza donde podrán encontrar buenos psicólogos, y centros psicológicos
+                        				   especializados en Lima y todo el Perú.</p>
                     </div>
                 </div>
             </div>
@@ -63,18 +43,17 @@
                 <div class="row">
 
                     <div class="col-xl-8">
-                        <h3 class="h3-about">Misi�n</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                           Quidem maiores tempore, quam neque velit autem necessitatibus 
-                           nisi fugit iure, rem esse repellat impedit quo praesentium. 
-                           Totam quibusdam officia nemo sapiente. Lorem ipsum dolor, sit amet 
-                           consectetur adipisicing elit. Eum quod expedita nesciunt culpa neque 
-                           obcaecati iusto eius ea? Asperiores nesciunt quae tempore id. Voluptatum 
-                           delectus, mollitia dolores reiciendis necessitatibus cupiditate.</p>
+                        <h3 class="h3-about" align="center">Misión</h3>
+                        <p align="justify">Brindar una atención psicológica oportuna y eficaz a los pacientes jóvenes y adultos 
+                        				   con problemas de estrés, ansiedad y depresión en todas sus dimensiones, por medio de 
+                        				   procesos de asistencia psicológica inmediata, orientados a mejorar su calidad de vida y permitir 
+                        				   a su vez, el desarrollo de competencias clave para su desenvolvimiento feliz en la vida. 
+                        				   Nuestro enfoque proactivo para el desarrollo de mejores prácticas y métodos eficaces de 
+                        				   tratamiento nos ayudará a lograr nuestra razón de ser.</p>
                     </div>
 
                     <div class="col-xl-4">
-                        <img th:src="@{/img/objetivos.png}" alt="" widht="412" height="239">
+                        <img th:src="@{/img/psico1.jpg}" alt="" width="100%" height="100%">
                     </div>
 
                 </div>
@@ -82,37 +61,39 @@
                 <div class="row">
 
                     <div class="col-xl-4">
-                        <img th:src="@{/img/objetivos.png}" alt="" widht="412" height="239">
+                        <img th:src="@{/img/psico2.jpg}" alt="" width="100%" height="100%">
                     </div>
 
                     <div class="col-xl-8">
-                        <h3 class="h3-about">Visi�n</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                           Quidem maiores tempore, quam neque velit autem necessitatibus 
-                           nisi fugit iure, rem esse repellat impedit quo praesentium. 
-                           Totam quibusdam officia nemo sapiente. Lorem ipsum dolor, sit amet 
-                           consectetur adipisicing elit. Eum quod expedita nesciunt culpa neque 
-                           obcaecati iusto eius ea? Asperiores nesciunt quae tempore id. Voluptatum 
-                           delectus, mollitia dolores reiciendis necessitatibus cupiditate.</p>
+                        <h3 class="h3-about" align="center">Visión</h3>
+                        <p align="justify">Queremos llegar a ser líderes del sector de la salud en Perú. Y que nuestro equipo de profesionales 
+                        				   se sientan inspirados para llevar a cabo su trabajo desde una óptica de excelencia y calidad. Además,
+                        				   satisfacer lo que nuestros pacientes nos solicitan siempre, bajo el marco de calidad, seguridad e 
+                        				   integridad.</p>
                     </div>
 
                 </div>
                 <br><br>
                 <div class="row">
 
-                    <div class="col-xl-8">
-                        <h3 class="h3-about">Objetivos</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                           Quidem maiores tempore, quam neque velit autem necessitatibus 
-                           nisi fugit iure, rem esse repellat impedit quo praesentium. 
-                           Totam quibusdam officia nemo sapiente. Lorem ipsum dolor, sit amet 
-                           consectetur adipisicing elit. Eum quod expedita nesciunt culpa neque 
-                           obcaecati iusto eius ea? Asperiores nesciunt quae tempore id. Voluptatum 
-                           delectus, mollitia dolores reiciendis necessitatibus cupiditate.</p>
+                    <div class="col-xl-7">
+                        <h3 class="h3-about" align="center">Objetivos</h3>
+                        <p align="justify">
+                        <li>Atender con eficacia, responsabilidad y sentido humanitario los problemas psicológicos que se presentan en las diferentes
+                            áreas del bienestar y desarrollo social en las que el comportamiento del individuo reviste esencial importancia para la 
+                            vida en sociedad, tanto en los ámbitos local y regional como en el nacional.</li>
+                        <li>Afrontar los problemas concernientes a la Psicología a partir de un análisis crítico de su naturaleza y de los modelos
+                            conceptuales y metodológicos que constituyen el cuerpo teórico de la disciplina.</li>
+                        <li>Contribuir en forma importante al mejoramiento de la salud individual y comunitaria, a la conservación y protección del 
+                            medioambiente, al desarrollo armónico de la convivencia humana en sociedad, a la mejora en la producción y consumo de 
+                            bienes y servicios, y al progreso educativo y cultural de la sociedad.</li>
+                        <li>Crear valores a todos nuestros pacientes y personal interno; buscando un crecimiento continuo y sostenible bajo la óptica
+                            de la innovación constante.</li>
+                        </p>
                     </div>
                     
-                    <div class="col-xl-4">
-                        <img th:src="@{/img/objetivos.png}" alt="" widht="412" height="239">
+                    <div class="col-xl-5">
+                        <img th:src="@{/img/lola.jpg}" alt="" width="100%" height="100%">
                     </div>
 
                 </div>
@@ -120,16 +101,10 @@
         </section>
     </div>
 
-    <br><br>
+    <br>
 
-    <footer class="bg-light text-center text-lg-start">
-        <!-- Copyright -->
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-            � 2020 Copyright:
-            <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
-        </div>
-        <!-- Copyright -->
-    </footer>
+<footer th:replace="/layout/footer"></footer>
+
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

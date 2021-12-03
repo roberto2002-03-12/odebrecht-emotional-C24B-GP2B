@@ -1,54 +1,33 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
 	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
-	lang="en">
+	lang="es">
 <head>
-<meta charset="ISO-8859-1">
-<title>Professionales</title>
+<meta charset="utf-8">
+<title>Profesionales</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link rel="stylesheet" th:href="@{/css/style.css}">
+<link rel="stylesheet" th:href="@{/css/video.css}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand" href="#" th:href="@{/}">Odebrecht</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-          	<li class="nav-item">
-              <a class="nav-link" href="#" sec:authorize="isAuthenticated()" th:href="@{/}">Inicio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" sec:authorize="isAuthenticated()" th:href="@{/}">Cuestionario</a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="#" sec:authorize="isAuthenticated()" th:href="@{/professionals}">Psicologos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" sec:authorize="isAuthenticated()" th:href="@{/}">Citas</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" sec:authorize="isAuthenticated()" th:href="@{/}">Perfil</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" sec:authorize="isAuthenticated()" th:href="@{/logout}">Cerrar sesi�n</a>
-            </li>
-          </ul>
-        </div>
-    </nav>
+    <nav th:replace="/layout/template"></nav>
 
     <div class="container">
+    
+    
         <section>
+        
+        <nav th:replace="/layout/template"></nav>
             <div class="psicologos">
-                <h2 class="psi">Psicologos</h2>
-                <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id, recusandae amet saepe dolor 
-                    facere quam quasi inventore repudiandae! Recusandae animi reprehenderit error modi enim 
-                    velit facere sit perferendis ratione natus! Lorem ipsum dolor sit amet consectetur adipisicing 
-                    elit. Iusto dolorem fugiat inventore. Nemo ex vel error autem aliquid perferendis enim! Eveniet 
-                    dolorem minima excepturi necessitatibus quibusdam, nostrum voluptates ipsa labore.
+            
+                <h2 align="center">Psicologos</h2>
+                <p align="justify">
+                    Con el objetivo de permitir a más personas acceder a nuestro tratamiento especializado en psicoterapia, 
+                    y gracias a los últimos avances en telemedicina, en Odebrecht hemos desarrollado el servicio de psicoterapia 
+                    online, a cargo de nuestro experimentado equipo de psicólogos clínicos – psicoterapeutas, quienes podrán 
+                    acompañarte, a través de videoconferencia, en el lugar que te encuentres o de forma presencial, desde la comodidad de tu hogar 
+                    u oficina.
                 </p>
                 <br>
 
@@ -65,13 +44,14 @@
                 </div>
 
                 <br>
-                <h2 class="psi">Psiquiatras</h2>
-                <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id, recusandae amet saepe dolor 
-                    facere quam quasi inventore repudiandae! Recusandae animi reprehenderit error modi enim 
-                    velit facere sit perferendis ratione natus! Lorem ipsum dolor sit amet consectetur adipisicing 
-                    elit. Iusto dolorem fugiat inventore. Nemo ex vel error autem aliquid perferendis enim! Eveniet 
-                    dolorem minima excepturi necessitatibus quibusdam, nostrum voluptates ipsa labore.
+                <h2 align="center">Psiquiatras</h2>
+                <p align="justify">
+                    Se enfocan en un tratamiento integral del paciente para lograr su reinserción a la actividad laboral 
+                    así como a sus núcleos sociales y sobretodo familiares.
+				<br>
+					Nos interesa detectar señales tempranas de alarma que permitan una intervención precoz y siempre tratar 
+					de reducir impactos negativos en el futuro paciente, así como en el de su entorno. Brinda el soporte a 
+					pacientes sin historia de trastornos mentales previos con procesos reactivos a enfermedades físicas.
                 </p>
 
                 <br>
@@ -86,24 +66,20 @@
                             </div>
                         </div>
                     </div>
+                    
                 </div>
+               
                 
             </div>
-
+         
         </section>
+        
     </div>
-
+	
+	
     <br><br>
 
-    <footer class="bg-light text-center text-lg-start">
-        <!-- Copyright -->
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-            � 2020 Copyright:
-            <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
-        </div>
-        <!-- Copyright -->
-    </footer>
-
+    <footer th:replace="/layout/footer"></footer>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

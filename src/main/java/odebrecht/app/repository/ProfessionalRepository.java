@@ -19,4 +19,7 @@ public interface ProfessionalRepository extends JpaRepository<Professional, Seri
 	
 	@Query(value="SELECT p.* FROM professional AS p INNER JOIN meeting AS m WHERE m.id = ?1 AND m.professional_id = p.id", nativeQuery = true)
 	Professional selectByMeeting(Long id);
+	
+	@Query(value="SELECT * FROM professional WHERE type = ?1 ORDER BY id LIMIT 1", nativeQuery = true)
+	Professional selectByType(String type);
 }
