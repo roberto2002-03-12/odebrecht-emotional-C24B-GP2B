@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
-	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+	lang="es">
 <head>
 <meta charset="ISO-8859-1">
 <title>Inicio</title>
@@ -8,9 +9,6 @@
 <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
-	<!-- IMPORTANTE -->
-	<!-- DEBES UTILIZAR sec:authorize="isAuthenticated()" para poder reenviar a otra página -->
-	<!-- coloca los estilos css en la carpeta static y utiliza th:href="@{/css/nombre de archivo y tipo}" para invocarlo -->
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <a class="navbar-brand" href="#" sec:authorize="isAuthenticated()" th:href="@{/}">Odebrecht</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,7 +26,7 @@
               <a class="nav-link" href="#" sec:authorize="isAuthenticated()" th:href="@{/professionals}">Psicologos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" sec:authorize="isAuthenticated()" th:href="@{/}">Citas</a>
+              <a class="nav-link" href="#" sec:authorize="isAuthenticated()" th:href="@{/citas}">Citas</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#" sec:authorize="isAuthenticated()" th:href="@{/}">Perfil</a>
@@ -52,8 +50,8 @@
             <div class="about-us">
                 <div class="row">
                     <div class="col-xl-12">
-                        <h2 id="about-h2" align="center">¿Quienes somos?</h2>
-                        <p align="justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi tenetur similique accusamus suscipit optio qui nam? 
+                        <h2 id="about-h2">¿Quienes somos?</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi tenetur similique accusamus suscipit optio qui nam? 
                             Debitis odit dolorem adipisci eligendi sunt natus sit, non necessitatibus nihil neque! Officia, delectus? Lorem ipsum
                             dolor sit, amet consectetur adipisicing elit. Molestias, accusantium et in maiores adipisci suscipit dicta ipsam blanditiis 
                             rerum libero dolorum vitae? Sed tempore adipisci sapiente, minima rem molestias impedit.</p>
@@ -65,8 +63,8 @@
                 <div class="row">
 
                     <div class="col-xl-8">
-                        <h3 class="h3-about" align="center">Misión</h3>
-                        <p align="justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        <h3 class="h3-about">Misión</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                            Quidem maiores tempore, quam neque velit autem necessitatibus 
                            nisi fugit iure, rem esse repellat impedit quo praesentium. 
                            Totam quibusdam officia nemo sapiente. Lorem ipsum dolor, sit amet 
@@ -88,8 +86,8 @@
                     </div>
 
                     <div class="col-xl-8">
-                        <h3 class="h3-about" align="center">Visión</h3>
-                        <p align="justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        <h3 class="h3-about">Visión</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                            Quidem maiores tempore, quam neque velit autem necessitatibus 
                            nisi fugit iure, rem esse repellat impedit quo praesentium. 
                            Totam quibusdam officia nemo sapiente. Lorem ipsum dolor, sit amet 
@@ -103,8 +101,8 @@
                 <div class="row">
 
                     <div class="col-xl-8">
-                        <h3 class="h3-about" align="center">Objetivos</h3>
-                        <p align="justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        <h3 class="h3-about">Objetivos</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                            Quidem maiores tempore, quam neque velit autem necessitatibus 
                            nisi fugit iure, rem esse repellat impedit quo praesentium. 
                            Totam quibusdam officia nemo sapiente. Lorem ipsum dolor, sit amet 

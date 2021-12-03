@@ -13,9 +13,10 @@ import odebrecht.app.model.Professional;
 @Repository
 public interface ProfessionalRepository extends JpaRepository<Professional, Serializable>{
 	Professional findById(Long id);
-	//sirve para mostrar los profesionales por un categoria predeterminado que coloque en su controlador
-	//NOTA IMPORTANTE: si quieres utilizar un query este no debe utilizar el nombre de la tabla, sino
-	//el nombre de la clase
+	
 	@Query("SELECT p FROM Professional p WHERE p.type LIKE %?1%")
 	List <Professional> listP(String keyword);
+	
+	@Query(value="SELECT p.* FROM professional AS p INNER JOIN meeting AS m WHERE m.id = ?1 AND m.professional_id = p.id", nativeQuery = true)
+	Professional selectByMeeting(Long id);
 }

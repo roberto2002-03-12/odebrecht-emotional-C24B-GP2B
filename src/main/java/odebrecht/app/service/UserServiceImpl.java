@@ -11,14 +11,15 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-
 import odebrecht.app.model.Role;
 import odebrecht.app.model.User;
 import odebrecht.app.repository.UserRepository;
 import odebrecht.app.web.dto.UserRegistrationDto;
-@Service
+
+@Service("user")
 public class UserServiceImpl implements UserService{
 
+	@Autowired
 	private UserRepository userRepository;
 	
 	@Autowired
@@ -48,5 +49,9 @@ public class UserServiceImpl implements UserService{
 	
 	private Collection<? extends GrantedAuthority> mapRolesToAuthorities(Collection<Role> roles){
 		return roles.stream().map(role -> new SimpleGrantedAuthority(role.getName())).collect(Collectors.toList());
+	}
+	
+	public User select(Long id) {
+		return userRepository.findById(id);
 	}
 }

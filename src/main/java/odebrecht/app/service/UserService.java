@@ -7,4 +7,5 @@ import odebrecht.app.web.dto.UserRegistrationDto;
 
 public interface UserService extends UserDetailsService{
 	User save(UserRegistrationDto registrationDto);
+	User select(Long id);
 }

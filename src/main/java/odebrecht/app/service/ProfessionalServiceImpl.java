@@ -24,4 +24,8 @@ public class ProfessionalServiceImpl {
 		return professionalRepository.findAll();
 	}
 	
+	public Professional selectMeetingAndProfessional(Long id) {
+		return professionalRepository.selectByMeeting(id);
+	}
+	
 }

@@ -1,10 +1,13 @@
 package odebrecht.app.model;
 
+import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
@@ -13,46 +16,33 @@ import javax.persistence.UniqueConstraint;
 public class Professional {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)//
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	private String email;//
+	private String email;
 	
-	@Column(name = "first_name")//
+	@Column(name = "first_name")
 	private String firstName;
 	
-	@Column(name = "last_name")//
+	@Column(name = "last_name")
 	private String lastName;
 	
-	@Column(name = "local_number")//
+	@Column(name = "local_number")
 	private int number;
 	
-	private String licensed;//
+	private String licensed;
 	
-	private String address;//
+	private String address;
 	
-	private String image;//
+	private String image;
 	
-	private String description;//
+	private String description;
 	
 	private String type;
 	
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	public String getType() {
-		return type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-	}
-
+	@OneToMany(mappedBy = "professionals", cascade = CascadeType.ALL)
+	private List<Meeting> meettings;
+	
 	public Long getId() {
 		return id;
 	}
@@ -116,15 +106,30 @@ public class Professional {
 	public void setImage(String image) {
 		this.image = image;
 	}
-	
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
 	public Professional() {
 		
 	}
 
-	public Professional(Long id, String email, String firstName, String lastName, int number, String licensed,
-			String address, String image, String description, String type) {
+	public Professional(String email, String firstName, String lastName, int number, String licensed, String address,
+			String image, String description, String type) {
 		super();
-		this.id = id;
 		this.email = email;
 		this.firstName = firstName;
 		this.lastName = lastName;

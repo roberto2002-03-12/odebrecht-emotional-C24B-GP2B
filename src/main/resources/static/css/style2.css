@@ -9,3 +9,7 @@ footer{
 .card {
     height: 1000px;
 }
+
+h1 {
+	text-align: center;
+}

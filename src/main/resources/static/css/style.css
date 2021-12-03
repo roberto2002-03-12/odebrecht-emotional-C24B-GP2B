@@ -29,6 +29,7 @@ p {
 .h3-about{
     font-size: 28px;
     font-style: italic;
+    text-align: center;
 }
 
 .container {
@@ -37,4 +38,16 @@ p {
 
 .psiquiatras {
     padding-top: 50px;
+}
+
+#about-h2 {
+	text-align: center;
+}
+
+p {
+	text-align: justify;
+}
+
+.psi {
+	text-align: center;
 }

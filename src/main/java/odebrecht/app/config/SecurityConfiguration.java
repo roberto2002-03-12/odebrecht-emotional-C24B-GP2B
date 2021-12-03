@@ -17,10 +17,6 @@ import odebrecht.app.service.UserService;
 @EnableWebSecurity
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 	
-	//comentario
-	//esto solo es necesario para login, registro y autenticación, no necesitas modificar algo
-	//para utilizar la app
-	
 	@Autowired
 	private UserService userService;
 	
