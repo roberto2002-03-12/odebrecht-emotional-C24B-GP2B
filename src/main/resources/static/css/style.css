@@ -73,3 +73,15 @@ form{
     border-image: url(../img/psicologo2.jpg) 20% round;
 	background-color: lightblue;
 }
+
+@media (min-width: 300px) and (max-width: 720px) {
+    #header-h1 {
+        display: none;
+    }
+    #header-main {
+    	display:none;
+    }
+    .img-index {
+    	display:none;
+    }
+}
